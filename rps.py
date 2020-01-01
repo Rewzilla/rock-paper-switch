@@ -149,6 +149,7 @@ def try_move(board, turn, move):
 			tmp = board[ey][ex]
 			board[ey][ex] = board[xy][xx]
 			board[xy][xx] = tmp
+			board[sy][sx] = " "
 
 		else:
 
