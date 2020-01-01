@@ -6,7 +6,7 @@ def init_state():
 		[' ', ' ', ' ', ' ', ' ', 'r', 'p', 's', 's', 's'],
 		[' ', ' ', ' ', ' ', ' ', ' ', 'r', 'p', 'p', 's'],
 		[' ', ' ', ' ', ' ', ' ', ' ', ' ', 'r', 'p', 's'],
-		[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'r', 'p'],
+		[' ', ' ', ' ', ' ', ' ', ' ', 'S', ' ', 'r', 'p'],
 		[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'r'],
 		['R', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
 		['P', 'R', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
@@ -81,7 +81,7 @@ def try_move(board, turn, move):
 			return False
 
 		# Rocks must only go orthogonal and diagonal
-		if board[sy][sx] in ["R", "r"] and sx - ex != 0 and sy - ey != 0 and sx - ex != sy - ey:
+		if board[sy][sx] in ["R", "r"] and sx - ex != 0 and sy - ey != 0 and abs(sx - ex) != abs(sy - ey):
 			return False
 
 		# Rocks can only go three spaces
